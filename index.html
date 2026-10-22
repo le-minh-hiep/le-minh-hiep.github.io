@@ -1,616 +1,503 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Lê Minh Hiệp</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Minh Hiep | Academic Portfolio</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-muted: #6b7280;
+            --accent-color: #1d4ed8;
+            --accent-hover: #1e40af;
+            --border-color: #e5e7eb;
+            --tag-bg: #f3f4f6;
+            --max-width: 1020px;
+        }
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	<link rel="stylesheet" href="css/animate.css"> <!-- Animate.css -->
-	<link rel="stylesheet" href="css/icomoon.css"> <!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/flexslider.css"> <!-- Flexslider  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css"> <!-- Flaticons  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css"> <!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/style.css"> <!-- Theme style  -->
-	<script src="js/modernizr-2.6.2.min.js"></script> <!-- Modernizr JS -->
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+        html {
+            scroll-behavior: smooth;
+        }
 
-	</head>
-	<body>
-	<div id="hieple-page">
-		<div class="container-wrap">
-		<a href="#" class="js-hieple-nav-toggle hieple-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="hieple-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
-				<h1 id="hieple-logo"><a href="index.html">Lê Minh Hiệp</a></h1>
-				<span class="position"><a href="#">Chủ nhà hàng</a> tại Hà Nội</span>
-			</div>
-			<nav id="hieple-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="services">Services</a></li>
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>	
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-					</ul>
-				</div>
-			</nav>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            line-height: 1.65;
+            font-size: 15.5px;
+            -webkit-font-smoothing: antialiased;
+        }
 
-			<div class="hieple-footer">
-				<p><small>&copy; 
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made with <i class="icon-heart" aria-hidden="true"></i> 
-</span> <span>Facebook profile: <a href="https://www.facebook.com/kaka.tran.58555941" target="_blank">Facebook.com</a></span></small></p>
-				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-				</ul>
-			</div>
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
 
-		</aside>
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
 
-		<div id="hieple-main">
-			<section id="hieple-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li style="background-image: url(images/img_bg_1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Xin chào! <br>Tôi là Lê Minh Hiệp</h1>
-						   					<h2>Sinh viên <a href="https://hust.edu.vn/" target="_blank">Đại học Bách khoa Hà Nội</a></h2>
-												<p><a class="btn btn-primary btn-learn">Tải CV <i class="icon-download4"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(images/img_bg_2.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>Tôi là <br>một người thông minh</h1>
-												<h2>Chủ sở hữu <a href="https://jw-marriott.marriott.com/" target="_blank">khách sạn JW Marriott</a></h2>
-												<p><a class="btn btn-primary btn-learn">Tải CV <i class="icon-download4"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				  	</ul>
-			  	</div>
-			</section>
+        /* Top Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
 
-			<section class="hieple-about" data-section="about">
-				<div class="hieple-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Us</span>
-										<h2 class="hieple-heading">Who Am I?</h2>
-										<p><strong>Xin chào, tôi là Lê Minh Hiệp</strong> Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #001</p>
-										<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #002</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-bulb"></i></span>
-										<h3>Graphic Design</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="services color-2">
-										<span class="icon2"><i class="icon-globe-outline"></i></span>
-										<h3>Web Design</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="services color-3">
-										<span class="icon2"><i class="icon-data"></i></span>
-										<h3>Software</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-4">
-										<span class="icon2"><i class="icon-phone3"></i></span>
-										<h3>Application</h3>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<div class="hire">
-										<h2> Đây là dòng chữ tự động. <br>Hãy viết câu văn của bạn vào đây nhé! #003</h2>
-										<a href="#" class="btn-hire">Xin hãy thuê em!</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
+        .site-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            text-decoration: none !important;
+        }
 
-			
-			<section class="hieple-services" data-section="services">
-				<div class="hieple-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">What I do?</span>
-							<h2 class="hieple-heading">Đây là 1 vài kinh nghiệm của em</h2>
-						</div>
-					</div>
-					<div class="row row-pt-md">
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-1">
-								<span class="icon">
-									<i class="icon-bulb"></i>
-								</span>
-								<div class="desc">
-									<h3>Kỹ năng thứ #0</h3>
-									<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #004</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-2">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Kỹ năng thứ #1</h3>
-									<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #005</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-3">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>Kỹ năng thứ #2</h3>
-									<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #006</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-4">
-								<span class="icon">
-									<i class="icon-layers2"></i>
-								</span>
-								<div class="desc">
-									<h3>Kỹ năng thứ #3</h3>
-									<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #007</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-5">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Kỹ năng thứ #4</h3>
-									<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #008</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-6">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>Kỹ năng thứ #5</h3>
-									<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #009</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			
-			<div id="hieple-counter" class="hieple-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="hieple-narrow-content">
-					<div class="row">
-					</div>
-					<div class="row">
-						<div class="col-md-3 text-center animate-box">
-							<span class="hieple-counter js-counter" data-from="0" data-to="309" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="hieple-counter-label">Sự đáng yêu</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="hieple-counter js-counter" data-from="0" data-to="356" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="hieple-counter-label">Sự dễ thương</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="hieple-counter js-counter" data-from="0" data-to="30" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="hieple-counter-label">Sự gần gũi</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="hieple-counter js-counter" data-from="0" data-to="10" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="hieple-counter-label">Sự thân thiện</span>
-						</div>
-					</div>
-				</div>
-			</div>
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
 
-			<section class="hieple-skills" data-section="skills">
-				<div class="hieple-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Khẩu vị của em</span>
-							<h2 class="hieple-heading animate-box">Món ăn em yêu</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #010</p>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Kỹ năng nói</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								    <span>75%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Kỹ năng ngồi</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="60"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-								    <span>60%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Kỹ năng chạy</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="85"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-								    <span>85%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Kỹ năng Excel</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-								    <span>90%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Kỹ năng PPT</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Kỹ năng Word</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								    <span>80%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+        .nav-links a {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
 
-			<section class="hieple-education" data-section="education">
-				<div class="hieple-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Education</span>
-							<h2 class="hieple-heading animate-box">Education</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingOne">
-									        <h4 class="panel-title">
-									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Bằng cấp thứ 1
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									         <div class="panel-body">
-									            <div class="row">
-										      		<div class="col-md-6">
-										      			<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #012</p>
-										      		</div>
-										      		<div class="col-md-6">
-										      			<p>Đây là dòng chữ tự động. Hãy viết câu văn của bạn vào đây nhé! #013</p>
-										      		</div>
-										      	</div>
-									         </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Bằng cấp thứ 2
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									        <div class="panel-body">
-									            <p>Đây là dòng chữ tự động. <strong>Hãy viết câu văn của bạn vào đây nhé! #014</strong> LÀM LUÔN ĐI.</p>
-													<ul>
-														<li>Hãy viết câu văn đi</li>
-														<li>Viết câu văn luôn đi</li>
-													</ul>
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingThree">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Bằng cấp thứ 3
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									        <div class="panel-body">
-									            <p>Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</p>	
-									        </div>
-									    </div>
-									</div>
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
 
-								
+        /* Main Layout: Sidebar + Content */
+        .main-container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
 
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingFive">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Bằng cấp thứ 4
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-									        <div class="panel-body">
-									            <p>Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</p>	
-									        </div>
-									    </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+        /* Left Sidebar (Profile) */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+        }
 
-			<section class="hieple-experience" data-section="experience">
-				<div class="hieple-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Experience</span>
-							<h2 class="hieple-heading animate-box">Work Experience</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
+        .avatar-wrapper {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--tag-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
-					               </div>
+        .avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-					               <div class="timeline-label">
-					                  <h2><a href="#">Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</a> <span>2017-2018</span></h2>
-					                  <p>Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</p>
-					               </div>
-					            </div>
-					         </article>
+        .profile-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
 
+        .profile-role {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</a> <span>2017-2018</span></h2>
-					                  <p>Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</p>
-					               </div>
-					            </div>
-					         </article>
+        .profile-org {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</a> <span>2017-2018</span></h2>
-					                  <p>Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</p>
-					               </div>
-					            </div>
-					         </article>
+        .contact-list {
+            list-style: none;
+            font-size: 0.9rem;
+        }
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</a> <span>2017-2018</span></h2>
-					                  <p>Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</p>
-					               </div>
-					            </div>
-					         </article>
+        .contact-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+        }
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
-					               </div>
-					               <div class="timeline-label">
-					               	<h2><a href="#">Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</a> <span>2017-2018</span></h2>
-					                  <p>Viết chữ vào <strong>đây</strong>, nhớ sửa text đấy nhé.</p>
-					               </div>
-					            </div>
-					         </article>
+        .contact-list i {
+            width: 18px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
 
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
+        .contact-list a {
+            color: var(--text-secondary);
+        }
 
-			<section class="hieple-contact" data-section="contact">
-				<div class="hieple-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Get in Touch</span>
-							<h2 class="hieple-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="hieple-feature hieple-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="hieple-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="hieple-text">
-									<p><a href="#">info@domain.com</a></p>
-								</div>
-							</div>
+        .contact-list a:hover {
+            color: var(--accent-color);
+        }
 
-							<div class="hieple-feature hieple-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="hieple-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="hieple-text">
-									<p>198 West 21th Street, Suite 721 New York NY 10016</p>
-								</div>
-							</div>
+        /* Right Content Area */
+        section {
+            margin-bottom: 42px;
+        }
 
-							<div class="hieple-feature hieple-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="hieple-icon">
-									<i class="icon-phone"></i>
-								</div>
-								<div class="hieple-text">
-									<p><a href="tel://">+123 456 7890</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-7 col-md-push-1">
-							<div class="row">
-								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Email">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Subject">
-										</div>
-										<div class="form-group">
-											<textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
-										</div>
-									</form>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+        h2.section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
 
-		</div><!-- end:hieple-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:hieple-page -->
+        p {
+            margin-bottom: 14px;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
 
-	
-	<script src="js/jquery.min.js"></script> <!-- jQuery -->
-	<script src="js/jquery.easing.1.3.js"></script> <!-- jQuery Easing -->
-	<script src="js/bootstrap.min.js"></script> <!-- Bootstrap -->
-	<script src="js/jquery.waypoints.min.js"></script> <!-- Waypoints -->
-	<script src="js/jquery.flexslider-min.js"></script> <!-- Flexslider -->
-	<script src="js/owl.carousel.min.js"></script> <!-- Owl carousel -->
-	<script src="js/jquery.countTo.js"></script> <!-- Counters -->
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
+        /* Experience & Projects Cards */
+        .item-card {
+            margin-bottom: 24px;
+        }
 
-	</body>
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .item-date {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .item-subtitle {
+            font-size: 0.92rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .item-details {
+            padding-left: 18px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .item-details li {
+            margin-bottom: 4px;
+        }
+
+        /* Tech Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-group h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+        }
+
+        .skill-group p {
+            font-size: 0.9rem;
+            text-align: left;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 60px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .sidebar {
+                position: static;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="site-title">Le Minh Hiep</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <div class="avatar-wrapper">
+                <!-- Replace images/avatar.jpg with your actual profile image path -->
+                <img src="images/avatar.jpg" alt="Le Minh Hiep" onerror="this.src='https://ui-avatars.com/api/?name=Le+Minh+Hiep&size=200&background=1d4ed8&color=fff'">
+            </div>
+            <h1 class="profile-name">Le Minh Hiep</h1>
+            <div class="profile-role">PFIEV Undergraduate Researcher</div>
+            <div class="profile-org">Hanoi University of Science and Technology (HUST)</div>
+
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-location-dot"></i> Hanoi, Vietnam</li>
+                <li><i class="fa-solid fa-flask"></i> WISER Research Lab</li>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:your-email@gmail.com">Email</a></li>
+                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/le-minh-hiep" target="_blank">GitHub</a></li>
+                <li><i class="fa-brands fa-linkedin"></i> <a href="#" target="_blank">LinkedIn</a></li>
+                <li><i class="fa-solid fa-file-pdf"></i> <a href="#" target="_blank">Curriculum Vitae</a></li>
+            </ul>
+        </aside>
+
+        <!-- Right Content -->
+        <main class="content">
+            
+            <!-- About Section -->
+            <section id="about">
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    I am a final-year undergraduate student in the <strong>High-Quality Engineering Training Program in Vietnam (PFIEV)</strong>, majoring in <strong>Industrial Informatics and Automation</strong> at <strong>Hanoi University of Science and Technology (HUST)</strong>.
+                </p>
+                <p>
+                    Currently, I serve as an undergraduate researcher at the <strong>WISER Research Lab</strong>. My academic and engineering interests lie at the intersection of <strong>Embedded Systems</strong>, <strong>Internet of Things (IoT)</strong>, <strong>TinyML / Edge AI</strong>, <strong>PCB Hardware Design</strong>, and <strong>Industrial Automation</strong>. I focus on architecting hardware-software co-designed sensor systems for smart agriculture and reliable industrial control.
+                </p>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education">
+                <h2 class="section-title">Education</h2>
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">Hanoi University of Science and Technology (HUST)</span>
+                        <span class="item-date">2023 – Present</span>
+                    </div>
+                    <div class="item-subtitle">Engineer's Degree (PFIEV) in Industrial Informatics and Automation</div>
+                    <ul class="item-details">
+                        <li>French-Vietnamese Elite Engineering Program (Programme de Formation d'Ingénieurs d'Excellence au Vietnam).</li>
+                        <li>Relevant Coursework: Process Control, Analog & Digital Electronics, Embedded Systems, Industrial Networks (Modbus/RS485), PLC & SCADA Systems.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Research & Projects Section -->
+            <section id="research">
+                <h2 class="section-title">Research & Selected Projects</h2>
+
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">Smart Agriculture & Plant Health Evaluation using TinyML</span>
+                        <span class="item-date">WISER Lab | 2026 – Present</span>
+                    </div>
+                    <div class="item-subtitle">Undergraduate Researcher</div>
+                    <ul class="item-details">
+                        <li>Formulated research methodology and hardware architecture for non-invasive monitoring and evaluation of potato plant health.</li>
+                        <li>Integrated multi-spectral spectroscopy (<strong>AS7265x</strong>), ambient temperature/humidity sensing (<strong>SHT31</strong>), and capacitive soil moisture profiling (<strong>STEMMA Soil Sensor</strong>).</li>
+                        <li>Designed data acquisition pipelines and deployed lightweight <strong>TinyML</strong> models on edge microcontrollers for real-time plant stress classification.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">TinyML</span>
+                        <span class="tag">AS7265x</span>
+                        <span class="tag">SHT31</span>
+                        <span class="tag">Embedded C/C++</span>
+                        <span class="tag">Smart Agriculture</span>
+                    </div>
+                </div>
+
+                <div class="item-card" id="projects">
+                    <div class="item-header">
+                        <span class="item-title">Custom ESP32 & RS485 Industrial Motor Test Board</span>
+                        <span class="item-date">Hardware Design | 2026</span>
+                    </div>
+                    <div class="item-subtitle">PCB Schematic & Layout Designer</div>
+                    <ul class="item-details">
+                        <li>Designed multi-sheet schematics, validated component pinouts, and resolved ERC/DRC connectivity constraints in <strong>Altium Designer</strong>.</li>
+                        <li>Engineered high-efficiency power management stages utilizing <strong>TPS63070</strong> buck-boost converters and <strong>BQ24075</strong> Li-Ion battery management ICs.</li>
+                        <li>Implemented differential <strong>MAX485</strong> transceivers paired with an <strong>ESP32</strong> MCU for industrial Modbus RTU communication and automated motor diagnostics.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">Altium Designer</span>
+                        <span class="tag">ESP32</span>
+                        <span class="tag">MAX485 / RS485</span>
+                        <span class="tag">TPS63070</span>
+                        <span class="tag">BQ24075</span>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">Industrial Process Control & Modbus Master Interface</span>
+                        <span class="item-date">Automation Systems | 2025 – 2026</span>
+                    </div>
+                    <div class="item-subtitle">System Integrator</div>
+                    <ul class="item-details">
+                        <li>Developed PLC ladder logic and configured analog input scaling modules in <strong>Siemens TIA Portal</strong>.</li>
+                        <li>Built custom SCADA/HMI Modbus master interfaces in <strong>NI LabVIEW</strong> for real-time industrial telemetry monitoring and closed-loop control.</li>
+                    </ul>
+                    <div class="tags">
+                        <span class="tag">Siemens TIA Portal</span>
+                        <span class="tag">NI LabVIEW</span>
+                        <span class="tag">Modbus RTU/TCP</span>
+                        <span class="tag">PLC Programming</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section id="skills">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3>Hardware & Embedded</h3>
+                        <p>Altium Designer, ESP32, Arduino IDE, STM32, Power Management IC Design, I2C / SPI / UART / RS485.</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Industrial Automation</h3>
+                        <p>Siemens TIA Portal (PLC/HMI), NI LabVIEW, Modbus Protocol, Process Control, AutoCAD 3D.</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Software & Edge AI</h3>
+                        <p>C/C++, Python, TinyML, Edge Impulse, Git / GitHub, HTML/CSS.</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Languages</h3>
+                        <p>Vietnamese (Native), English (Working Proficiency), French (Academic / DELF - PFIEV Track).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leadership & Extracurriculars -->
+            <section id="leadership">
+                <h2 class="section-title">Leadership & Extracurricular Activities</h2>
+                <div class="item-card">
+                    <div class="item-header">
+                        <span class="item-title">"Student of 5 Merits" Movement Committee</span>
+                        <span class="item-date">HUST</span>
+                    </div>
+                    <div class="item-subtitle">Vice Head of Movement Committee</div>
+                    <ul class="item-details">
+                        <li>Coordinated university-wide student development initiatives, academic workshops, and mentorship programs supporting undergraduate students in achieving the prestigious "Student of 5 Merits" title.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        &copy; 2026 Le Minh Hiep. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+    </footer>
+
+</body>
 </html>
-
