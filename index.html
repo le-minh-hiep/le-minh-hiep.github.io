@@ -1,27 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Minh Hiep | Academic Portfolio</title>
-    <!-- Google Fonts: Inter -->
+    <title>Le Minh Hiep | Academic & Engineering Portfolio</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-primary: #1f2937;
-            --text-secondary: #4b5563;
-            --text-muted: #6b7280;
-            --accent-color: #1d4ed8;
-            --accent-hover: #1e40af;
-            --border-color: #e5e7eb;
-            --tag-bg: #f3f4f6;
-            --max-width: 1020px;
+        :root[data-theme="light"] {
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --accent-gradient: linear-gradient(135deg, #2563eb, #06b6d4);
+            --border: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 25px -5px rgba(37, 99, 235, 0.12), 0 8px 10px -6px rgba(37, 99, 235, 0.08);
+        }
+
+        :root[data-theme="dark"] {
+            --bg-main: #0b1120;
+            --bg-card: #1e293b;
+            --bg-glass: rgba(15, 23, 42, 0.85);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-light: rgba(56, 189, 248, 0.12);
+            --accent-gradient: linear-gradient(135deg, #3b82f6, #2dd4bf);
+            --border: #334155;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 20px 25px -5px rgba(56, 189, 248, 0.15);
         }
 
         * {
@@ -35,50 +53,62 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-main);
             color: var(--text-primary);
-            background-color: var(--bg-color);
             line-height: 1.65;
-            font-size: 15.5px;
-            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
         }
 
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.15s ease;
+        /* Ambient Background Glow */
+        .bg-glow {
+            position: fixed;
+            top: -150px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, rgba(6,182,212,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            pointer-events: none;
         }
 
-        a:hover {
-            color: var(--accent-hover);
-            text-decoration: underline;
-        }
-
-        /* Top Navigation */
+        /* Navbar */
         header {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .nav-container {
-            max-width: var(--max-width);
+            max-width: 1180px;
             margin: 0 auto;
             padding: 0 24px;
-            height: 60px;
+            height: 68px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .site-title {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            text-decoration: none !important;
+        .brand {
+            font-weight: 800;
+            font-size: 1.25rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 28px;
         }
 
         .nav-links {
@@ -89,406 +119,841 @@
 
         .nav-links a {
             color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.92rem;
             text-decoration: none;
+            position: relative;
+            padding: 4px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--accent);
         }
 
-        /* Main Layout: Sidebar + Content */
-        .main-container {
-            max-width: var(--max-width);
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .theme-btn:hover {
+            transform: rotate(15deg) scale(1.08);
+            border-color: var(--accent);
+        }
+
+        /* Main Grid Layout */
+        .layout-container {
+            max-width: 1180px;
             margin: 40px auto;
             padding: 0 24px;
             display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: 48px;
+            grid-template-columns: 310px 1fr;
+            gap: 44px;
             align-items: start;
         }
 
-        /* Left Sidebar (Profile) */
-        .sidebar {
+        /* Sticky Profile Card (Left) */
+        .profile-card {
             position: sticky;
-            top: 90px;
+            top: 100px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s ease;
         }
 
-        .avatar-wrapper {
-            width: 180px;
-            height: 180px;
+        .profile-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .avatar-ring {
+            width: 156px;
+            height: 156px;
+            margin: 0 auto 20px;
+            padding: 4px;
             border-radius: 50%;
-            overflow: hidden;
+            background: var(--accent-gradient);
+            position: relative;
+        }
+
+        .avatar-ring img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--bg-card);
+            background-color: var(--bg-card);
+            transition: transform 0.4s ease;
+        }
+
+        .avatar-ring:hover img {
+            transform: scale(1.05);
+        }
+
+        .status-dot {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 18px;
+            height: 18px;
+            background: #10b981;
+            border: 3px solid var(--bg-card);
+            border-radius: 50%;
+        }
+
+        .profile-name {
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+        }
+
+        .typewriter-box {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            min-height: 24px;
+            margin-bottom: 8px;
+        }
+
+        .profile-uni {
+            font-size: 0.85rem;
+            color: var(--text-muted);
             margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            background-color: var(--tag-bg);
+        }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.25s ease;
+        }
+
+        .social-btn:hover {
+            background: var(--accent);
+            color: #ffffff;
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .info-list {
+            list-style: none;
+            text-align: left;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            font-size: 0.88rem;
+        }
+
+        .info-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .info-list i {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* Content Sections (Right) */
+        section {
+            margin-bottom: 52px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .section-header i {
+            font-size: 1.3rem;
+            color: var(--accent);
+            background: var(--accent-light);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .avatar-wrapper img {
+        .section-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+        }
+
+        /* Reveal Animation on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Bio Card */
+        .bio-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .bio-card p {
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+        }
+
+        .bio-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Project & Research Cards with Thumbnail Images */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+
+        .project-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #1e293b;
+            min-height: 210px;
+        }
+
+        .project-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .profile-name {
-            font-size: 1.4rem;
+        .project-card:hover .project-img-wrapper img {
+            transform: scale(1.09);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(6px);
+            color: #fff;
+            font-size: 0.72rem;
             font-weight: 700;
-            margin-bottom: 4px;
-            color: var(--text-primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .profile-role {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 4px;
-            font-weight: 500;
-        }
-
-        .profile-org {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .contact-list {
-            list-style: none;
-            font-size: 0.9rem;
-        }
-
-        .contact-list li {
-            margin-bottom: 10px;
+        .project-body {
+            padding: 24px;
             display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--text-secondary);
-        }
-
-        .contact-list i {
-            width: 18px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .contact-list a {
-            color: var(--text-secondary);
-        }
-
-        .contact-list a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Right Content Area */
-        section {
-            margin-bottom: 42px;
-        }
-
-        h2.section-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 20px;
-        }
-
-        p {
-            margin-bottom: 14px;
-            color: var(--text-secondary);
-            text-align: justify;
-        }
-
-        /* Experience & Projects Cards */
-        .item-card {
-            margin-bottom: 24px;
-        }
-
-        .item-header {
-            display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
+        }
+
+        .project-meta {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 4px;
         }
 
-        .item-title {
-            font-size: 1.05rem;
-            font-weight: 600;
+        .project-title {
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin-bottom: 10px;
             color: var(--text-primary);
         }
 
-        .item-date {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .item-subtitle {
+        .project-desc {
             font-size: 0.92rem;
-            color: var(--accent-color);
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .item-details {
-            padding-left: 18px;
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            padding-left: 18px;
+            margin-bottom: 16px;
         }
 
-        .item-details li {
-            margin-bottom: 4px;
+        .project-desc li {
+            margin-bottom: 6px;
         }
 
-        /* Tech Tags */
-        .tags {
+        .tag-row {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 10px;
         }
 
         .tag {
-            background-color: var(--tag-bg);
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            font-weight: 500;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 0.76rem;
+            font-weight: 600;
+            padding: 4px 11px;
+            border-radius: 6px;
+            transition: transform 0.2s ease;
+        }
+
+        .tag:hover {
+            transform: scale(1.06);
+        }
+
+        /* Education & Leadership Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -37px;
+            top: 24px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-main);
+        }
+
+        .timeline-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .timeline-title {
+            font-size: 1.08rem;
+            font-weight: 700;
+        }
+
+        .timeline-date {
+            font-size: 0.82rem;
+            font-weight: 600;
+            background: var(--accent-light);
+            color: var(--accent);
             padding: 3px 10px;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
+            border-radius: 20px;
+        }
+
+        .timeline-sub {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        /* Interactive Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            height: 180px;
+            border: 1px solid var(--border);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: #fff;
+            font-size: 0.84rem;
+            font-weight: 600;
         }
 
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
         }
 
-        .skill-group h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--text-primary);
+        .skill-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
-        .skill-group p {
-            font-size: 0.9rem;
-            text-align: left;
-            margin-bottom: 0;
+        .skill-box:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
         }
 
-        /* Footer */
+        .skill-box h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-box h3 i {
+            color: var(--accent);
+        }
+
         footer {
-            border-top: 1px solid var(--border-color);
-            padding: 24px;
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
             text-align: center;
-            font-size: 0.85rem;
             color: var(--text-muted);
+            font-size: 0.88rem;
             margin-top: 60px;
         }
 
-        /* Responsive Mobile */
-        @media (max-width: 768px) {
-            .main-container {
+        /* Responsive */
+        @media (max-width: 920px) {
+            .layout-container {
                 grid-template-columns: 1fr;
-                gap: 32px;
             }
-
-            .sidebar {
+            .profile-card {
                 position: static;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
             }
-
-            .contact-list {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
+            .project-card {
+                grid-template-columns: 1fr;
             }
-
-            .nav-links {
-                gap: 14px;
-                font-size: 0.85rem;
+            .project-img-wrapper {
+                height: 220px;
+            }
+            .gallery-grid, .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Navigation -->
+    <div class="bg-glow"></div>
+
+    <!-- Navigation -->
     <header>
         <div class="nav-container">
-            <a href="#" class="site-title">Le Minh Hiep</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-            </ul>
+            <a href="#" class="brand">LMH.Portfolio</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research & Projects</a></li>
+                    <li><a href="#gallery">Hardware Lab</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+                <button class="theme-btn" id="themeToggle" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="main-container">
+    <!-- Main Container -->
+    <div class="layout-container">
         
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <div class="avatar-wrapper">
-                <!-- Replace images/avatar.jpg with your actual profile image path -->
-                <img src="images/avatar.jpg" alt="Le Minh Hiep" onerror="this.src='https://ui-avatars.com/api/?name=Le+Minh+Hiep&size=200&background=1d4ed8&color=fff'">
+        <!-- Left Sidebar Profile -->
+        <aside class="profile-card reveal active">
+            <div class="avatar-ring">
+                <!-- Automatically tries images/profile.jpg or falls back to a clean portrait placeholder -->
+                <img src="images/profile.jpg" alt="Le Minh Hiep" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+                <span class="status-dot" title="Available for Research & Engineering Opportunities"></span>
             </div>
-            <h1 class="profile-name">Le Minh Hiep</h1>
-            <div class="profile-role">PFIEV Undergraduate Researcher</div>
-            <div class="profile-org">Hanoi University of Science and Technology (HUST)</div>
 
-            <ul class="contact-list">
-                <li><i class="fa-solid fa-location-dot"></i> Hanoi, Vietnam</li>
-                <li><i class="fa-solid fa-flask"></i> WISER Research Lab</li>
-                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:your-email@gmail.com">Email</a></li>
-                <li><i class="fa-brands fa-github"></i> <a href="https://github.com/le-minh-hiep" target="_blank">GitHub</a></li>
-                <li><i class="fa-brands fa-linkedin"></i> <a href="#" target="_blank">LinkedIn</a></li>
-                <li><i class="fa-solid fa-file-pdf"></i> <a href="#" target="_blank">Curriculum Vitae</a></li>
+            <h1 class="profile-name">Le Minh Hiep</h1>
+            <div class="typewriter-box" id="typewriter">Embedded & Automation Engineer</div>
+            <div class="profile-uni">PFIEV Program • Hanoi University of Science and Technology (HUST)</div>
+
+            <div class="social-row">
+                <a href="https://github.com/le-minh-hiep" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:hiep@example.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="social-btn" title="Curriculum Vitae"><i class="fa-solid fa-file-lines"></i></a>
+            </div>
+
+            <ul class="info-list">
+                <li>
+                    <i class="fa-solid fa-microchip"></i>
+                    <span><strong>Major:</strong> Industrial Informatics & Automation</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-flask"></i>
+                    <span><strong>Lab:</strong> WISER Research Lab</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span><strong>Location:</strong> Hanoi, Vietnam</span>
+                </li>
+                <li>
+                    <i class="fa-solid fa-language"></i>
+                    <span><strong>Languages:</strong> English, French (DELF), Vietnamese</span>
+                </li>
             </ul>
         </aside>
 
-        <!-- Right Content -->
-        <main class="content">
-            
+        <!-- Right Main Content -->
+        <main>
+
             <!-- About Section -->
-            <section id="about">
-                <h2 class="section-title">About Me</h2>
-                <p>
-                    I am a final-year undergraduate student in the <strong>High-Quality Engineering Training Program in Vietnam (PFIEV)</strong>, majoring in <strong>Industrial Informatics and Automation</strong> at <strong>Hanoi University of Science and Technology (HUST)</strong>.
-                </p>
-                <p>
-                    Currently, I serve as an undergraduate researcher at the <strong>WISER Research Lab</strong>. My academic and engineering interests lie at the intersection of <strong>Embedded Systems</strong>, <strong>Internet of Things (IoT)</strong>, <strong>TinyML / Edge AI</strong>, <strong>PCB Hardware Design</strong>, and <strong>Industrial Automation</strong>. I focus on architecting hardware-software co-designed sensor systems for smart agriculture and reliable industrial control.
-                </p>
-            </section>
-
-            <!-- Education Section -->
-            <section id="education">
-                <h2 class="section-title">Education</h2>
-                <div class="item-card">
-                    <div class="item-header">
-                        <span class="item-title">Hanoi University of Science and Technology (HUST)</span>
-                        <span class="item-date">2023 – Present</span>
+            <section id="about" class="reveal active">
+                <div class="section-header">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="bio-card">
+                    <p>
+                        I am a final-year undergraduate student in the <strong>French-Vietnamese High-Quality Engineering Program (PFIEV)</strong> at <strong>Hanoi University of Science and Technology (HUST)</strong>, specializing in <strong>Industrial Informatics and Automation</strong>.
+                    </p>
+                    <p>
+                        As an undergraduate researcher at the <strong>WISER Research Lab</strong>, I focus on bridging custom hardware design and edge intelligence. My work spans multi-layer <strong>PCB schematic & layout design (Altium Designer)</strong>, <strong>TinyML / Edge AI</strong> deployment on microcontrollers, multi-spectral sensor fusion, and industrial control networks (PLC, Modbus RTU, LabVIEW).
+                    </p>
+                    <div class="bio-stats">
+                        <div class="stat-box">
+                            <div class="stat-num">PFIEV</div>
+                            <div class="stat-label">Elite Engineering Track</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">WISER</div>
+                            <div class="stat-label">Undergraduate Researcher</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">3+</div>
+                            <div class="stat-label">Hardware & AI Systems</div>
+                        </div>
                     </div>
-                    <div class="item-subtitle">Engineer's Degree (PFIEV) in Industrial Informatics and Automation</div>
-                    <ul class="item-details">
-                        <li>French-Vietnamese Elite Engineering Program (Programme de Formation d'Ingénieurs d'Excellence au Vietnam).</li>
-                        <li>Relevant Coursework: Process Control, Analog & Digital Electronics, Embedded Systems, Industrial Networks (Modbus/RS485), PLC & SCADA Systems.</li>
-                    </ul>
                 </div>
             </section>
 
-            <!-- Research & Projects Section -->
-            <section id="research">
-                <h2 class="section-title">Research & Selected Projects</h2>
-
-                <div class="item-card">
-                    <div class="item-header">
-                        <span class="item-title">Smart Agriculture & Plant Health Evaluation using TinyML</span>
-                        <span class="item-date">WISER Lab | 2026 – Present</span>
-                    </div>
-                    <div class="item-subtitle">Undergraduate Researcher</div>
-                    <ul class="item-details">
-                        <li>Formulated research methodology and hardware architecture for non-invasive monitoring and evaluation of potato plant health.</li>
-                        <li>Integrated multi-spectral spectroscopy (<strong>AS7265x</strong>), ambient temperature/humidity sensing (<strong>SHT31</strong>), and capacitive soil moisture profiling (<strong>STEMMA Soil Sensor</strong>).</li>
-                        <li>Designed data acquisition pipelines and deployed lightweight <strong>TinyML</strong> models on edge microcontrollers for real-time plant stress classification.</li>
-                    </ul>
-                    <div class="tags">
-                        <span class="tag">TinyML</span>
-                        <span class="tag">AS7265x</span>
-                        <span class="tag">SHT31</span>
-                        <span class="tag">Embedded C/C++</span>
-                        <span class="tag">Smart Agriculture</span>
-                    </div>
+            <!-- Research & Featured Projects -->
+            <section id="research" class="reveal">
+                <div class="section-header">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <h2 class="section-title">Featured Research & Engineering Projects</h2>
                 </div>
 
-                <div class="item-card" id="projects">
-                    <div class="item-header">
-                        <span class="item-title">Custom ESP32 & RS485 Industrial Motor Test Board</span>
-                        <span class="item-date">Hardware Design | 2026</span>
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-img-wrapper">
+                        <span class="project-badge">WISER Lab • 2026</span>
+                        <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80" alt="Smart Agriculture TinyML">
                     </div>
-                    <div class="item-subtitle">PCB Schematic & Layout Designer</div>
-                    <ul class="item-details">
-                        <li>Designed multi-sheet schematics, validated component pinouts, and resolved ERC/DRC connectivity constraints in <strong>Altium Designer</strong>.</li>
-                        <li>Engineered high-efficiency power management stages utilizing <strong>TPS63070</strong> buck-boost converters and <strong>BQ24075</strong> Li-Ion battery management ICs.</li>
-                        <li>Implemented differential <strong>MAX485</strong> transceivers paired with an <strong>ESP32</strong> MCU for industrial Modbus RTU communication and automated motor diagnostics.</li>
-                    </ul>
-                    <div class="tags">
-                        <span class="tag">Altium Designer</span>
-                        <span class="tag">ESP32</span>
-                        <span class="tag">MAX485 / RS485</span>
-                        <span class="tag">TPS63070</span>
-                        <span class="tag">BQ24075</span>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-meta">Edge AI & Multi-Spectral Sensing</div>
+                            <h3 class="project-title">Non-Invasive Potato Plant Health Evaluation using TinyML</h3>
+                            <ul class="project-desc">
+                                <li>Architected a custom IoT sensor node combining 18-channel spectral spectroscopy (<strong>AS7265x</strong>), ambient climate sensing (<strong>SHT31</strong>), and capacitive soil profiling (<strong>STEMMA Soil Sensor</strong>).</li>
+                                <li>Built data acquisition pipelines and trained lightweight <strong>TinyML</strong> neural networks for real-time on-device crop stress classification.</li>
+                            </ul>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tag">TinyML</span>
+                            <span class="tag">AS7265x Spectral</span>
+                            <span class="tag">SHT31</span>
+                            <span class="tag">Embedded C/C++</span>
+                            <span class="tag">Smart Agriculture</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-img-wrapper">
+                        <span class="project-badge">PCB Design • 2026</span>
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Altium PCB Hardware Design">
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-meta">Custom Hardware & Power Electronics</div>
+                            <h3 class="project-title">ESP32 & RS485 Industrial Motor Diagnostic Board</h3>
+                            <ul class="project-desc">
+                                <li>Designed schematics, validated IC footprints, and resolved ERC/DRC layout constraints in <strong>Altium Designer</strong>.</li>
+                                <li>Engineered high-efficiency power rails using <strong>TPS63070</strong> buck-boost converters and <strong>BQ24075</strong> Li-Ion battery power-path management ICs.</li>
+                                <li>Integrated differential <strong>MAX485</strong> transceivers for noise-immune industrial Modbus RTU motor testing.</li>
+                            </ul>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tag">Altium Designer</span>
+                            <span class="tag">ESP32</span>
+                            <span class="tag">MAX485 / RS485</span>
+                            <span class="tag">TPS63070</span>
+                            <span class="tag">BQ24075</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-img-wrapper">
+                        <span class="project-badge">Automation • 2025–2026</span>
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Industrial Automation PLC LabVIEW">
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <div class="project-meta">SCADA & Industrial Control</div>
+                            <h3 class="project-title">Process Control & Modbus Master Supervisory Interface</h3>
+                            <ul class="project-desc">
+                                <li>Programmed PLC ladder logic and calibrated analog input scaling modules in <strong>Siemens TIA Portal</strong>.</li>
+                                <li>Developed a real-time Modbus Master HMI interface in <strong>NI LabVIEW</strong> for closed-loop industrial process telemetry and control.</li>
+                            </ul>
+                        </div>
+                        <div class="tag-row">
+                            <span class="tag">Siemens TIA Portal</span>
+                            <span class="tag">NI LabVIEW</span>
+                            <span class="tag">Modbus RTU/TCP</span>
+                            <span class="tag">PID Process Control</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Hardware & Lab Gallery -->
+            <section id="gallery" class="reveal">
+                <div class="section-header">
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <h2 class="section-title">Hardware & Lab Visuals</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=600&q=80" alt="PCB Prototyping">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Multi-Layer Schematic & PCB Routing</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Sensor Calibration">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Oscilloscope & RS485 Bus Validation</span>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=600&q=80" alt="Embedded Firmware">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">ESP32 & TinyML Edge Inference</span>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="item-card">
-                    <div class="item-header">
-                        <span class="item-title">Industrial Process Control & Modbus Master Interface</span>
-                        <span class="item-date">Automation Systems | 2025 – 2026</span>
+            <!-- Education & Leadership Timeline -->
+            <section id="education" class="reveal">
+                <div class="section-header">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h2 class="section-title">Education & Leadership</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-head">
+                            <span class="timeline-title">Hanoi University of Science and Technology (HUST)</span>
+                            <span class="timeline-date">2023 – Present</span>
+                        </div>
+                        <div class="timeline-sub">Engineer's Degree (PFIEV) • Industrial Informatics and Automation</div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                            Selected for the French-Vietnamese Elite Engineering Program. Focused on Analog/Digital Electronics, Embedded Microcontrollers, Process Control, and Industrial Communication Networks.
+                        </p>
                     </div>
-                    <div class="item-subtitle">System Integrator</div>
-                    <ul class="item-details">
-                        <li>Developed PLC ladder logic and configured analog input scaling modules in <strong>Siemens TIA Portal</strong>.</li>
-                        <li>Built custom SCADA/HMI Modbus master interfaces in <strong>NI LabVIEW</strong> for real-time industrial telemetry monitoring and closed-loop control.</li>
-                    </ul>
-                    <div class="tags">
-                        <span class="tag">Siemens TIA Portal</span>
-                        <span class="tag">NI LabVIEW</span>
-                        <span class="tag">Modbus RTU/TCP</span>
-                        <span class="tag">PLC Programming</span>
+
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <div class="timeline-head">
+                            <span class="timeline-title">Vice Head — "Student of 5 Merits" Movement Committee</span>
+                            <span class="timeline-date">HUST Leadership</span>
+                        </div>
+                        <div class="timeline-sub">Extracurricular & Community Engagement</div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                            Spearheaded university-wide mentorship initiatives, academic seminars, and student development campaigns at HUST.
+                        </p>
                     </div>
                 </div>
             </section>
 
             <!-- Technical Skills -->
-            <section id="skills">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-group">
-                        <h3>Hardware & Embedded</h3>
-                        <p>Altium Designer, ESP32, Arduino IDE, STM32, Power Management IC Design, I2C / SPI / UART / RS485.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Industrial Automation</h3>
-                        <p>Siemens TIA Portal (PLC/HMI), NI LabVIEW, Modbus Protocol, Process Control, AutoCAD 3D.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Software & Edge AI</h3>
-                        <p>C/C++, Python, TinyML, Edge Impulse, Git / GitHub, HTML/CSS.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Languages</h3>
-                        <p>Vietnamese (Native), English (Working Proficiency), French (Academic / DELF - PFIEV Track).</p>
-                    </div>
+            <section id="skills" class="reveal">
+                <div class="section-header">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h2 class="section-title">Technical Arsenal</h2>
                 </div>
-            </section>
-
-            <!-- Leadership & Extracurriculars -->
-            <section id="leadership">
-                <h2 class="section-title">Leadership & Extracurricular Activities</h2>
-                <div class="item-card">
-                    <div class="item-header">
-                        <span class="item-title">"Student of 5 Merits" Movement Committee</span>
-                        <span class="item-date">HUST</span>
+                <div class="skills-grid">
+                    <div class="skill-box">
+                        <h3><i class="fa-solid fa-microchip"></i> PCB & Embedded Hardware</h3>
+                        <div class="tag-row">
+                            <span class="tag">Altium Designer</span>
+                            <span class="tag">ESP32 / Arduino</span>
+                            <span class="tag">TPS63070 / BQ24075</span>
+                            <span class="tag">I2C / SPI / UART / RS485</span>
+                        </div>
                     </div>
-                    <div class="item-subtitle">Vice Head of Movement Committee</div>
-                    <ul class="item-details">
-                        <li>Coordinated university-wide student development initiatives, academic workshops, and mentorship programs supporting undergraduate students in achieving the prestigious "Student of 5 Merits" title.</li>
-                    </ul>
+                    <div class="skill-box">
+                        <h3><i class="fa-solid fa-industry"></i> Industrial Automation</h3>
+                        <div class="tag-row">
+                            <span class="tag">Siemens TIA Portal</span>
+                            <span class="tag">NI LabVIEW</span>
+                            <span class="tag">PLC Ladder Logic</span>
+                            <span class="tag">Modbus RTU/TCP</span>
+                            <span class="tag">AutoCAD 3D</span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <h3><i class="fa-solid fa-brain"></i> Software & Edge AI</h3>
+                        <div class="tag-row">
+                            <span class="tag">C / C++</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">TinyML</span>
+                            <span class="tag">Git & GitHub</span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <h3><i class="fa-solid fa-earth-americas"></i> Languages</h3>
+                        <div class="tag-row">
+                            <span class="tag">Vietnamese (Native)</span>
+                            <span class="tag">English (Academic/Technical)</span>
+                            <span class="tag">French (PFIEV Track)</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -496,8 +961,68 @@
     </div>
 
     <footer>
-        &copy; 2026 Le Minh Hiep. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+        &copy; 2026 Le Minh Hiep • Designed & Engineered for <a href="https://le-minh-hiep.github.io/" style="color: var(--accent); text-decoration: none; font-weight: 600;">GitHub Pages</a>
     </footer>
 
+    <!-- Interactive JavaScript Effects -->
+    <script>
+        // 1. Dark / Light Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlEl = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlEl.getAttribute('data-theme');
+            const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlEl.setAttribute('data-theme', nextTheme);
+            icon.className = nextTheme === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+        });
+
+        // 2. Typewriter Effect under Profile Name
+        const roles = [
+            "PFIEV Undergraduate Researcher",
+            "Embedded & PCB Hardware Designer",
+            "TinyML & Smart Sensing Engineer",
+            "Industrial Automation Enthusiast"
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeEl = document.getElementById('typewriter');
+
+        function typeLoop() {
+            const currentRole = roles[roleIndex];
+            if (isDeleting) {
+                typeEl.textContent = currentRole.substring(0, charIndex--);
+            } else {
+                typeEl.textContent = currentRole.substring(0, charIndex++);
+            }
+
+            let speed = isDeleting ? 35 : 75;
+
+            if (!isDeleting && charIndex === currentRole.length + 1) {
+                speed = 1800; // Pause at full text
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                speed = 400;
+            }
+            setTimeout(typeLoop, speed);
+        }
+        typeLoop();
+
+        // 3. Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealElements.forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
